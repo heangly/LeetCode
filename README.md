@@ -1,0 +1,1 @@
+These are coding challenges solution written in JavaScript

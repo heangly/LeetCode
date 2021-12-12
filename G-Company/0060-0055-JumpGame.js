@@ -1,17 +1,10 @@
-var canJump = function (nums) {
-  if (!nums.length) return false
-  if (nums.length === 1) return true
-  if (nums.length === 2) return nums[0] >= 1
+function canJump(nums) {
+  let max = nums[0]
 
-  let i = 0
-  let j = nums[0]
-
-  while (i < nums.length) {
-    i = Math.max(...nums.slice(i + 1, j + 1)) + 1
-    console.log(i)
+  for (let i = 1; i < nums.length; i++) {
+    if (max < i) return false // max steps cannot reach position i
+    max = Math.max(nums[i] + i, max)
   }
 
-  console.log(i)
+  return true
 }
-
-console.log(canJump([2, 3, 1, 1, 4]))

@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/squares-of-a-sorted-array/
 const sortedSquare = (nums) => {
   let left = 0
   let right = nums.length - 1

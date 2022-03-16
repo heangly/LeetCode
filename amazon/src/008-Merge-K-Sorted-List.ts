@@ -59,3 +59,4 @@ for (const list of lists) {
 }
 
 console.log(mergeKLists(arrayLists))
+export {}

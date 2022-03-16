@@ -24,3 +24,5 @@ const isRobotBounded = (instructions: string): boolean => {
 
   return (x === 0 && y === 0) || i !== 0
 }
+
+export {}

@@ -32,3 +32,4 @@ const letterCombinations = (digits: string): string[] => {
 console.log(letterCombinations('23'))
 console.log(letterCombinations(''))
 console.log(letterCombinations('2'))
+export {}

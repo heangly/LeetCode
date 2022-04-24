@@ -42,3 +42,5 @@ const getListNodeLength = (node: ListNode | null): number => {
 
   return ans
 }
+
+export {}

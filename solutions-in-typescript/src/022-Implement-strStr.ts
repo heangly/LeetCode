@@ -4,3 +4,4 @@ const strStr = (haystack: string, needle: string): number => {
 
 console.log(strStr('hello', 'll'))
 console.log(strStr('aaaaa', 'bba'))
+export {}

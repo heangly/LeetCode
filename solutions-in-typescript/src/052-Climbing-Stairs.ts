@@ -20,3 +20,4 @@ const dfs = (
 
 console.log(climbStairs(2))
 console.log(climbStairs(3))
+export {}

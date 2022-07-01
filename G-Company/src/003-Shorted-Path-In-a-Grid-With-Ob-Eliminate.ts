@@ -1,54 +1,35 @@
+//https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
 // Time: O(rc) | Space: O(rc)
 const shortestPath = (grid: number[][], k: number): number => {
-  const maxRow = grid.length
-  const maxCol = grid[0].length
-
+  const q = [{ r: 0, c: 0, step: 0, obs: 0 }]
   const visited = new Set()
-  const q = [{ r: 0, c: 0, step: 0, obstacle: 0 }]
 
-  while (q.length) {
+  while (q.length > 0) {
     const curr = q.shift()!
-    const info = `${curr.r}-${curr.c}-${curr.obstacle}`
+    const info = `${curr.r}-${curr.c}-${curr.obs}`
 
-    if (curr.r < 0 || curr.r >= maxRow || curr.c < 0 || curr.c >= maxCol)
+    if (
+      curr.r < 0 ||
+      curr.r >= grid.length ||
+      curr.c < 0 ||
+      curr.c >= grid[0].length
+    )
       continue
-
-    if (curr.obstacle > k || visited.has(info)) continue
+    if (curr.obs > k || visited.has(info)) continue
 
     if (grid[curr.r][curr.c] === 1) {
-      curr.obstacle++
+      curr.obs++
     }
 
-    if (curr.r === maxRow - 1 && curr.c === maxCol - 1) {
+    if (curr.r === grid.length - 1 && curr.c === grid[0].length - 1)
       return curr.step
-    }
 
     visited.add(info)
 
-    q.push({
-      r: curr.r + 1,
-      c: curr.c,
-      step: curr.step + 1,
-      obstacle: curr.obstacle
-    })
-    q.push({
-      r: curr.r - 1,
-      c: curr.c,
-      step: curr.step + 1,
-      obstacle: curr.obstacle
-    })
-    q.push({
-      r: curr.r,
-      c: curr.c + 1,
-      step: curr.step + 1,
-      obstacle: curr.obstacle
-    })
-    q.push({
-      r: curr.r,
-      c: curr.c - 1,
-      step: curr.step + 1,
-      obstacle: curr.obstacle
-    })
+    q.push({ r: curr.r + 1, c: curr.c, step: curr.step + 1, obs: curr.obs })
+    q.push({ r: curr.r - 1, c: curr.c, step: curr.step + 1, obs: curr.obs })
+    q.push({ r: curr.r, c: curr.c + 1, step: curr.step + 1, obs: curr.obs })
+    q.push({ r: curr.r, c: curr.c - 1, step: curr.step + 1, obs: curr.obs })
   }
 
   return -1

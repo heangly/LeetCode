@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/maximum-units-on-a-truck/
-
 // Time : O(nlog(n)) | space: O(1)
 const maximumUnits = (boxTypes: number[][], truckSize: number): number => {
   boxTypes.sort((a, b) => b[1] - a[1])

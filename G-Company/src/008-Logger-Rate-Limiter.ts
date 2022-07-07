@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/logger-rate-limiter/submissions/
+// https://leetcode.com/problems/logger-rate-limiter/
 // Time: O(1) | space: O(n)
 class Logger {
   table: { [key: string]: number }

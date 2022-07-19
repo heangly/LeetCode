@@ -30,16 +30,3 @@ class SnapshotArray {
     return this.arr[index][snap_id]
   }
 }
-const sa = new SnapshotArray(1)
-console.log(sa.set(0, 15))
-console.log(sa.snap())
-console.log(sa.snap())
-console.log(sa.snap())
-console.log(sa.get(0, 2))
-console.log(sa.snap())
-console.log(sa.snap())
-console.log(sa.get(0, 0))
-
-console.log('')
-
-console.log(sa.snapshot)

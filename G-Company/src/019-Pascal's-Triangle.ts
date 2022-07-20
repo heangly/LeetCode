@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/pascals-triangle/
 // Time: O(n^2) | Space: O(1)
 const generate = (numRows: number): number[][] => {
   const ans: number[][] = [[1]]

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/coin-change-2/solution/
+// https://leetcode.com/problems/coin-change-2/
 // Time: O(c * a)  | Space: O(a) where c is length of coins and a is the length of amount
 const change = (amount: number, coins: number[]): number => {
   const dp = new Array(amount + 1).fill(0)

@@ -40,3 +40,5 @@ node.left.left = new TreeNode(4)
 node.left.right = new TreeNode(5)
 
 console.log(findLeaves(node))
+
+export {}

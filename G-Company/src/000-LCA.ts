@@ -1,3 +1,15 @@
+class TreeNode {
+  val: number
+  left: TreeNode | null
+  right: TreeNode | null
+
+  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+    this.val = val === undefined ? 0 : val
+    this.left = left === undefined ? null : left
+    this.right = right === undefined ? null : right
+  }
+}
+
 const findLCA = (
   node: TreeNode | null,
   value1: number,
@@ -14,3 +26,5 @@ const findLCA = (
 
   return left || right
 }
+
+export {}

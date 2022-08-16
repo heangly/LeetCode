@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/unique-paths/
-// Time: O(m + n) | Space: O(m + n)
+// Time: O(m * n) | Space: O(m + n)
 const uniquePaths = (m: number, n: number): number => {
   const memo: { [key: string]: number } = {}
 

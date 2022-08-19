@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-falling-path-sum/
-// Time: O(n) | Space: O(1)
+// Time: O(n * m) | Space: O(1)
 const minFallingPathSum = (matrix: number[][]): number => {
   if (matrix.length === 1) return Math.min(...matrix[0])
 

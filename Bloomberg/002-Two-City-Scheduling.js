@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/two-city-scheduling/
 const twoCitySchedCost = (costs) => {
   costs.sort((a, b) => a[0] - a[1] - (b[0] - b[1]))
   const mid = Math.floor(costs.length / 2)

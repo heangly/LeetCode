@@ -1,5 +1,6 @@
+// https://leetcode.com/problems/decode-string/
 /**
- * @param {string}s
+ * @param {string}
  * @return {string}
  */
 

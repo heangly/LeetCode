@@ -47,3 +47,5 @@ ll.next.next = new ListNode(3)
 ll.next.next.next = new ListNode(4)
 
 console.log(swapParis(ll))
+
+export {}

@@ -1,14 +1,23 @@
-const getRow = (rowIndex: number): number[] => {
-  const dp: number[][] = [[1]]
+// https://leetcode.com/problems/pascals-triangle-ii/
 
-  for (let i = 1; i <= rowIndex; i++) {
-    const temp = [1]
-    for (let j = 1; j < i; j++) {
-      temp.push(dp[i - 1][j] + dp[i - 1][j - 1])
+const getRow = (rowIndex: number): number[] => {
+  const helper = (dp: number[][]): number[] => {
+    if (dp.length - 1 === rowIndex) {
+      return dp.pop()!
     }
-    temp.push(1)
-    dp.push(temp)
+
+    const prev = dp[dp.length - 1]
+    const newArr = [1]
+
+    for (let i = 1; i < prev.length; i++) {
+      newArr.push(prev[i - 1] + prev[i])
+    }
+    newArr.push(1)
+    dp.push(newArr)
+    return helper(dp)
   }
 
-  return dp.pop()!
+  return helper([[1], [1, 1]])
 }
+
+console.log(getRow(3))

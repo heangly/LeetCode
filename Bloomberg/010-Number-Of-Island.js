@@ -2,16 +2,12 @@
 
 // Time: O(n * m) | Space: O(n * m)
 const numIsLand = (grid) => {
-  const cache = new Set()
   let island = 0
 
   const dfs = (i, j) => {
-    const key = `${i}-${j}`
-    if (cache.has(key)) return
     if (i < 0 || i >= grid.length || j < 0 || j >= grid[i].length) return
     if (grid[i][j] === '0') return
 
-    cache.add(key)
     grid[i][j] = '0'
 
     dfs(i + 1, j)

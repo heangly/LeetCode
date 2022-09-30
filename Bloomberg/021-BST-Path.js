@@ -6,10 +6,6 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
-/**
- * @param {TreeNode} root
- * @return {string[]}
- */
 var binaryTreePaths = function (root) {
   const ans = []
   const helper = (node, temp) => {

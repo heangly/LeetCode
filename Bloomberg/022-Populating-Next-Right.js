@@ -7,14 +7,6 @@ function Node(val, left, right, next) {
   this.next = next === undefined ? null : next
 }
 
-/**
- *  0:  [1]
- *  1:  [2 ,3]
- *  2:  [4, 5, 7]
- *
- *
- */
-
 const connect = (root) => {
   if (!root) return root
   const table = {}

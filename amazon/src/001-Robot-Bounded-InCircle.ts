@@ -1,5 +1,5 @@
 const isRobotBounded = (instructions: string): boolean => {
-  // up, left, down, right
+  // up, left, down, right this
   const directions = [
     [0, 1],
     [-1, 0],

@@ -23,3 +23,5 @@ tree.right.left = new TreeNode(15)
 tree.right.right = new TreeNode(7)
 
 console.log(maxDepth(tree))
+
+export {}

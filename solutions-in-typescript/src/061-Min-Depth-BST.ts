@@ -26,3 +26,5 @@ tree.right = new TreeNode(20)
 tree.right.left = new TreeNode(15)
 tree.right.right = new TreeNode(7)
 console.log(minDepth(tree))
+
+export {}

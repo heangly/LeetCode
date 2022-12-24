@@ -10,3 +10,5 @@ const removeDuplicates = (nums: number[]): number => {
 
   return start
 }
+
+export {}

@@ -16,24 +16,24 @@ const treeToDoublyList = (root: Node | null): Node | null => {
 
     dfs(tree.left)
 
-    if (tail) {
-      tail.right = tree
-      tree.left = tail
+    if (last) {
+      last.right = tree
+      tree.left = last
     } else {
       head = tree
     }
 
-    tail = tree
+    last = tree
     dfs(tree.right)
   }
 
   let head: Node | null = null
-  let tail: Node | null = null
+  let last: Node | null = null
 
   dfs(root)
 
-  tail!.right = head
-  head!.left = tail
+  last!.right = head
+  head!.left = last
 
   return head
 }

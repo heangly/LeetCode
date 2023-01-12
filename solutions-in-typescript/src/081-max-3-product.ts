@@ -5,8 +5,7 @@ const maximumProduct = (nums: number[]): number => {
   const case1 = sortedNums[len - 1] * sortedNums[len - 2] * sortedNums[len - 3]
   const case2 = sortedNums[len - 1] * sortedNums[len - 2] * sortedNums[0]
   const case3 = sortedNums[len - 1] * sortedNums[0] * sortedNums[1]
-  const case4 = sortedNums[0] * sortedNums[1] * sortedNums[2]
-  return Math.max(case1, case2, case3, case4)
+  return Math.max(case1, case2, case3)
 }
 
 console.log('====================================')

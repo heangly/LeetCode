@@ -1,24 +1,16 @@
 // Time: O(n) | Space: O(n)
 const nextGreaterElement = (nums1: number[], nums2: number[]): number[] => {
-  const output: number[] = []
   const table: Record<number, number> = {}
+  const stack: number[] = [nums2[0]]
 
-  nums2.forEach((num, index) => {
-    table[num] = index
-  })
-
-  for (const num of nums1) {
-    let nextValue = -1
-    for (let i = table[num] + 1; i < nums2.length; i++) {
-      if (nums2[i] > num) {
-        nextValue = nums2[i]
-        break
-      }
+  for (let i = 1; i < nums2.length; i++) {
+    while (stack.length && stack[stack.length - 1] < nums2[i]) {
+      table[stack.pop()!] = nums2[i]
     }
-    output.push(nextValue)
+    stack.push(nums2[i])
   }
 
-  return output
+  return nums1.map((num) => table[num] || -1)
 }
 
 const nums1 = [1, 3, 5, 2, 4]

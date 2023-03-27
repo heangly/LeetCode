@@ -18,7 +18,6 @@ const sortedSquaredArray = (array: number[]) => {
     }
     outputIndex--
   }
-
   return output
 }
 

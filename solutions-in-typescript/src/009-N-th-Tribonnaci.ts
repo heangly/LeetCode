@@ -1,4 +1,4 @@
-// Time: O(N) | Space: O(!)
+// Time: O(N) | Space: O(1)
 function tribonacci(n: number): number {
   const dp = [0, 1, 1]
 

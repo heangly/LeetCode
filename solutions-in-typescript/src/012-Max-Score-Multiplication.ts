@@ -1,24 +1,21 @@
 function maximumScore(nums: number[], multipliers: number[]): number {
-  const n = nums.length
-  const m = multipliers.length
-  const memo: number[][] = []
+  const memo = new Array(multipliers.length).fill(null).map(() => new Array(multipliers.length).fill([]))
 
-  for (let i = 0; i <= m + 1; i++) {
-    memo[i] = []
+  const helper = (left: number, op: number) => {
+    if (op === multipliers.length) return 0
+    const rightIndex = nums.length - 1 - (op - left)
+
+    if (memo[left][op]) {
+      return memo[left][op]
+    }
+
+    const takeRight = multipliers[op] * nums[rightIndex] + helper(left, op + 1)
+    const takeLeft = multipliers[op] * nums[left] + helper(left + 1, op + 1)
+    memo[left][op] = Math.max(takeLeft, takeRight)
+    return memo[left][op]
   }
 
-  const dp = (left: number, i: number) => {
-    if (i === m) return 0
-    if (memo[left][i] !== undefined) return memo[left][i]
-
-    const takeLeft = dp(left + 1, i + 1) + nums[left] * multipliers[i]
-    const takeRight = dp(left, i + 1) + nums[n - 1 - i + left] * multipliers[i]
-    memo[left][i] = Math.max(takeLeft, takeRight)
-    return memo[left][i]
-  }
-
-  const res = dp(0, 0)
-  return res
+  return helper(0, 0)
 }
 
-console.log(maximumScore([1, 2, 3], [3, 2, 1]))
+console.log(maximumScore([-5, -3, -3, -2, 7, 1], [-10, -5, 3, 4, 6]))

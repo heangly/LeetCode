@@ -1,5 +1,5 @@
 // Time: O(N) | Space: O(1)
-function twoSum(numbers: number[], target: number): number[] {
+function twoSumInput(numbers: number[], target: number): number[] {
   let left = 0
   let right = numbers.length - 1
   const output: number[] = []

@@ -1,7 +1,6 @@
 // Time: O(n^2 * d) | Space: O(n^2 * d)
 function minDifficulty(jobDifficulty: number[], d: number): number {
-  const n = jobDifficulty.length
-  if (n < d) return -1
+  if (jobDifficulty.length < d) return -1
   const memo: Record<string, number> = {}
 
   const dfs = (i: number, remainingDays: number, currMax: number): number => {

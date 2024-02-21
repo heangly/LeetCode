@@ -1,32 +1,28 @@
+// Time: O(nlogn + n^2) | space: O(1)
 function threeSum(nums: number[]): number[][] {
-  const output: [number, number, number][] = []
   nums.sort((a, b) => a - b)
-  const table = new Set<string>()
+  const ans: number[][] = []
 
   for (let i = 0; i < nums.length; i++) {
-    let left = i + 1
-    let right = nums.length - 1
+    if (i > 0 && nums[i] === nums[i - 1]) continue
+    let j = i + 1
+    let k = nums.length - 1
 
-    while (left < right) {
-      const first = nums[i]
-      const second = nums[left]
-      const third = nums[right]
-      const sum = first + second + third
-
-      const key = `${first}:${second}:${third}`
-
-      if (sum === 0 && !table.has(key)) {
-        output.push([first, second, third])
-        table.add(key)
-        left++
-        right--
+    while (j < k) {
+      const sum = nums[i] + nums[j] + nums[k]
+      if (sum === 0) {
+        ans.push([nums[i], nums[j], nums[k]])
+        while (nums[j] === nums[j + 1]) j++
+        while (nums[k] === nums[k - 1]) k--
+        j++
+        k--
       } else if (sum > 0) {
-        right--
+        k--
       } else {
-        left++
+        j++
       }
     }
   }
 
-  return output
+  return ans
 }

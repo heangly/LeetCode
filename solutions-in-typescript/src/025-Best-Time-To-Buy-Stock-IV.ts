@@ -1,3 +1,4 @@
+// Time: O(n * k * 2) = O(n * k) | Space: O(n * k )
 function maxProfit(k: number, prices: number[]): number {
   const memo: Record<string, number> = {}
 

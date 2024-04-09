@@ -1,5 +1,5 @@
 // Time: O(n * k * 2) = O(n * k) | Space: O(n * k )
-function maxProfit(k: number, prices: number[]): number {
+function maxProfit4(k: number, prices: number[]): number {
   const memo: Record<string, number> = {}
 
   const helper = (i: number, transactionRemaining: number, isHolding: boolean) => {

@@ -1,5 +1,5 @@
 //Time: O(N) | space: O(N)
-function topKFrequent(nums: number[], k: number): number[] {
+function topKFrequent4(nums: number[], k: number): number[] {
   const map: Record<string, number> = {}
   const buckets = new Array(nums.length + 1).fill(null)
   const output: number[] = []
@@ -26,4 +26,4 @@ function topKFrequent(nums: number[], k: number): number[] {
   return output
 }
 
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2))
+console.log(topKFrequent4([1, 1, 1, 2, 2, 3], 2))

@@ -15,10 +15,10 @@ const threeSum2 = (nums: number[]): number[][] => {
       const sum = nums[i] + nums[j] + nums[k]
       if (sum === targetNum) {
         output.push([nums[i], nums[j], nums[k]])
-        while (nums[j] === nums[j + 1]) j++
-        while (nums[k] === nums[k - 1]) k--
         j++
         k--
+        while (nums[j] === nums[j - 1]) j++
+        while (nums[k] === nums[k + 1]) k--
       } else if (sum > 0) {
         k--
       } else {

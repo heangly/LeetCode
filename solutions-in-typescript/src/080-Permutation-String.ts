@@ -21,7 +21,6 @@ function checkInclusion(s1: string, s2: string): boolean {
     s2Count[newChar] = (s2Count[newChar] || 0) + 1
 
     // Remove the old character from the window
-
     s2Count[oldChar]--
 
     // Check if the current window matches the s1 count

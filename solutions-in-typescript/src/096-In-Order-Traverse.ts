@@ -11,31 +11,22 @@ class TreeNode6 {
 
 // Time: O(N) | Space: O(N)
 function levelOrder(root: TreeNode6 | null): number[][] {
-  if (!root) return []
-
-  const bfsArray = [root]
   const ans: number[][] = []
 
-  while (bfsArray.length) {
-    const levelSize = bfsArray.length
-    const temp: number[] = []
+  const helper = (tree: TreeNode6 | null, level: number) => {
+    if (!tree) return
 
-    for (let i = 0; i < levelSize; i++) {
-      const currNode = bfsArray.shift()!
-
-      temp.push(currNode.val)
-
-      if (currNode.left) {
-        bfsArray.push(currNode.left)
-      }
-
-      if (currNode.right) {
-        bfsArray.push(currNode.right)
-      }
+    if (!ans[level]) {
+      ans[level] = []
     }
 
-    ans.push(temp) // Add the current level to the result
+    ans[level].push(tree.val)
+
+    helper(tree.left, level + 1)
+    helper(tree.right, level + 1)
   }
+
+  helper(root, 0)
 
   return ans
 }

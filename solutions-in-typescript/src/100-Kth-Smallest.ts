@@ -10,7 +10,7 @@ class TreeNodeA {
 }
 
 // Time: O(N) | Space: O(H) Where H is the height of the tree
-function kthSmallest(root: TreeNodeA | null, k: number): number {
+function kthSmallest2(root: TreeNodeA | null, k: number): number {
   const ans: number[] = []
 
   const helper = (tree: TreeNode | null) => {

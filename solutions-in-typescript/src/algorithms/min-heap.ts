@@ -9,6 +9,8 @@
 // siftDown, siftUp, peek, remove, and insert methods.
 // Feel free to add new properties and methods to the class.
 
+// Time: O(n * log(k))
+
 export class MinHeap {
   heap: number[]
 

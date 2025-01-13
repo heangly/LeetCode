@@ -1,15 +1,15 @@
-class TrieNode {
-  children: Record<string, TrieNode> = {}
+class TrieNode3 {
+  children: Record<string, TrieNode3> = {}
   word: string | null = null // Stores the full word at leaf nodes
 }
 
-function buildTrie(words: string[]): TrieNode {
-  const root = new TrieNode()
+function buildTrie(words: string[]): TrieNode3 {
+  const root = new TrieNode3()
   for (const word of words) {
     let node = root
     for (const char of word) {
       if (!node.children[char]) {
-        node.children[char] = new TrieNode()
+        node.children[char] = new TrieNode3()
       }
       node = node.children[char]
     }
@@ -22,7 +22,7 @@ function findWords(board: string[][], words: string[]): string[] {
   const root = buildTrie(words)
   const result: string[] = []
 
-  const dfs = (i: number, j: number, node: TrieNode) => {
+  const dfs = (i: number, j: number, node: TrieNode3) => {
     // Out of bounds or visited cell
     if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] === '#') {
       return

@@ -2,7 +2,7 @@
 // heap must be COMPLETE binary tree (2 children) (fill from left to right) except the last layer.
 // left child = 2i + 1
 // right child = 2i + 2
-// parent = (i-1)/2
+// parent = Math.floor((i-1) / 2)
 
 // min heap
 // Do not edit the class below except for the buildHeap,

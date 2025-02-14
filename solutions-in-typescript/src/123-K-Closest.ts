@@ -1,22 +1,22 @@
+type Arr2 = {
+  distance: number
+  point: number[]
+}
+
 function kClosest(points: number[][], k: number): number[][] {
-  const table: Record<string, number[][]> = {}
+  const arr: Arr2[] = []
   const res: number[][] = []
 
   for (const point of points) {
-    const res = getDistance2(point)
-
-    if (!(res in table)) {
-      table[res] = []
-    }
-
-    table[res].push(point)
+    const distance = getDistance2(point)
+    arr.push({ distance, point })
   }
 
-  const keys = Object.keys(table).sort((a, b) => +a - +b)
+  arr.sort((a, b) => a.distance - b.distance)
 
-  for (const key of keys) {
+  for (const ele of arr) {
     if (res.length < k) {
-      res.push(...table[key])
+      res.push(ele.point)
     } else {
       break
     }

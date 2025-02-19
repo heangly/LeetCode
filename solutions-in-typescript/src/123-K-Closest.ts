@@ -3,6 +3,9 @@ type Arr2 = {
   point: number[]
 }
 
+
+// Time: O(n log n)
+// Space: O(n)
 function kClosest(points: number[][], k: number): number[][] {
   const arr: Arr2[] = []
   const res: number[][] = []

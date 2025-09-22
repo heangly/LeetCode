@@ -1,5 +1,5 @@
 // Time: O(n * m)
-// Space: O(1)
+// Space: O(n * m)
 function groupAnagrams(strs: string[]): string[][] {
   const table: Record<string, string[]> = {}
 

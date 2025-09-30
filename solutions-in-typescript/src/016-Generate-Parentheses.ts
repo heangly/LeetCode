@@ -1,3 +1,4 @@
+// Time: O(2^n) | Space: O(N)
 function generateParenthesis(n: number): string[] {
   const output: string[] = []
 

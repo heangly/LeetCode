@@ -1,4 +1,4 @@
-// Time: O(N)
+// Time: O(N) |
 class MinStack {
   private stack: { val: number; min: number }[] = []
 

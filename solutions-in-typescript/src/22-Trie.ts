@@ -43,6 +43,7 @@ class Trie {
   }
 
   // Time: O(N)
+
   startsWith(prefix: string) {
     let curr = this.root
 

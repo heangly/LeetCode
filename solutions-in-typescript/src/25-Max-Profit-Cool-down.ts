@@ -1,5 +1,6 @@
 //Time	O(n)	Each (i, canBuy, canSell) visited once
 // Space	O(n)	Memo table + recursion call stack
+
 function maxProfit(prices: number[]): number {
   const memo: Record<string, number> = {}
 
